@@ -11,6 +11,8 @@ try {
   console.error(error.message);
 }
 
+let comparisons = 0;
+
 const mergeSort = (data) => {
   let dataArr = [...data];
   if (dataArr.length <= 1) {
@@ -19,6 +21,7 @@ const mergeSort = (data) => {
   const midArr = Math.floor(dataArr.length / 2);
   const leftArr = dataArr.slice(0, midArr);
   const rightArr = dataArr.slice(midArr);
+  comparisons++;
 
   return mergeArrays(mergeSort(leftArr), mergeSort(rightArr));
 }
@@ -27,6 +30,7 @@ const mergeArrays = (leftArr, rightArr) => {
   let resultArr = [];
   let leftIndex = 0, rightIndex = 0;
   while (leftIndex < leftArr.length && rightIndex < rightArr.length) {
+    comparisons ++;
     if (leftArr[leftIndex] < rightArr[rightIndex]) {
       resultArr.push(leftArr[leftIndex]);
       leftIndex++;
@@ -46,5 +50,6 @@ const mergeArrays = (leftArr, rightArr) => {
 }
 
 console.time("temp");
-console.log(`Tri par fusion: ${mergeSort(data.list)}`);
+console.log(`Tri par fusion: [${mergeSort(data.big_list)}]`);
+console.log(`Nombre de comparaisons: ${comparisons}`);
 console.timeEnd("temp");
