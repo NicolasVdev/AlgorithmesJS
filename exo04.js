@@ -1,4 +1,4 @@
-const algoWestViewSimpleTour = (building) => {
+const algoWestViewSimpleLoop = (building) => {
   let currentIndex = building.length -1;
   let count = 1;
   for (i = building.length; i > 1; --i) {
@@ -18,9 +18,9 @@ const list = [3, 7, 8, 3, 6, 1];
 const list2 = [1, 4, 5, 8];
 const list3 = [7, 5, 1, 11, 12, 2, 9, 5, 5, 6];
 
-console.log(algoWestViewSimpleTour(list));
-console.log(algoWestViewSimpleTour(list2));
-console.log(algoWestViewSimpleTour(list3));
+console.log(algoWestViewSimpleLoop(list));
+console.log(algoWestViewSimpleLoop(list2));
+console.log(algoWestViewSimpleLoop(list3));
 
 
 // function westView(data) {
